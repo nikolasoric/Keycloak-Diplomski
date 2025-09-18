@@ -10,11 +10,12 @@ terraform {
     organization = "SorkeOps"
 
     workspaces {
-      name = "diplomski"
+      name = "Keycloak-Diplomski"
     }
   }
 }
 
 provider "azurerm" {
   features {}
+
 }
