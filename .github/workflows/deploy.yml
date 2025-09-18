@@ -80,3 +80,4 @@ jobs:
       if: always()
       id: username_output
       run: echo "admin_username=$(terraform output -raw admin_username)" >> $GITHUB_OUTPUT
+
