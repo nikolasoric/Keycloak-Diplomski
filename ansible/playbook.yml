@@ -1,0 +1,9 @@
+---
+- name: Deploy potrebnih servisa
+  hosts: all
+  become: true
+
+  roles:
+    - nginx
+    - docker
+    - keycloak

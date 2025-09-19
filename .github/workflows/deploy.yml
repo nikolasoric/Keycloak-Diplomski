@@ -81,3 +81,23 @@ jobs:
       id: username_output
       run: echo "admin_username=$(terraform output -raw admin_username)" >> $GITHUB_OUTPUT
 
+  ansible:
+    runs-on: ubuntu-latest
+    needs: terraform_apply
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'workflow_dispatch')
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Ansible Playbook
+        uses: dawidd6/action-ansible-playbook@v3
+        with:
+          playbook: ansible/playbook.yml
+          inventory: |
+            [all]
+            ${{ needs.terraform_apply.outputs.instance_ip }} 
+          key: ${{ secrets.PRIVATE_KEY_PEM }}
+          options: |
+            --extra-vars "ansible_ssh_user=${{ needs.terraform_apply.outputs.admin_username }} instance_ip=${{ needs.terraform_apply.outputs.instance_ip }} admin_username=${{ needs.terraform_apply.outputs.admin_username }}
+            
