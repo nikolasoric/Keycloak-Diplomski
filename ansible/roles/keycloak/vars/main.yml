@@ -1,0 +1,29 @@
+#Postgres
+postgres_user: postgres
+postgres_password: intro
+postgres_db: keycloakdb
+
+
+#Keycloak Config
+keycloak_admin: admin
+keycloak_admin_password: admin
+keycloak_protocol: openid-connect
+
+
+#Keycloak Realm and Client
+keycloak_realm: diplomski-realm
+keycloak_client_id: diplomski-client
+keycloak_client_name: diplomski-client
+keycloak_secret: my-very-secret-secret
+
+
+#Keycloak User
+keycloak_user: diplomski-user
+keycloak_user_firstName: diplomski
+keycloak_user_lastName: User
+keycloak_user_email: user@diplomski.com
+keycloak_password: diplomski
+
+
+#Oauth2
+oauth2_cookie_secret: lol-lol-lol-1234
