@@ -37,7 +37,10 @@
     mode: '0644'
 
 - name: Pokreni Docker Compose da pokrenes Keycloak i Postgres
-  command: docker-compose -f /home/{{ admin_username }}/docker-compose.yml up -d
+  shell: docker-compose -f docker-compose.yml up -d
+  args:
+    chdir: /home/{{ admin_username }}
+  become: true
 
 - name: Sacekaj da se Keycloak Konfigurise
   uri:
