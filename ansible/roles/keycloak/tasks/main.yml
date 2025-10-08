@@ -53,6 +53,16 @@
   delay: 10
   until: result.status == 200
 
+- name: Sacekaj Keycloak admin API
+  uri:
+    url: https://{{ instance_ip }}:8443/realms/master
+    method: GET
+    validate_certs: no
+  register: keycloak_api_status
+  retries: 30
+  delay: 5
+  until: keycloak_api_status.status == 200
+
 - name: Kreiraj Keycloak Realm
   community.general.keycloak_realm:
     auth_client_id: admin-cli
@@ -141,4 +151,5 @@
     state: present
 
 - name: Restart oauth kontejner
+
   command: docker restart oauth
