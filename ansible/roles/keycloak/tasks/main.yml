@@ -151,5 +151,4 @@
     state: present
 
 - name: Restart oauth kontejner
-
   command: docker restart oauth
