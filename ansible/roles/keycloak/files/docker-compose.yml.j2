@@ -33,11 +33,6 @@ services:
     volumes:
       - /opt/keycloak/certs/keycloak.crt.pem:/opt/keycloak/conf/keycloak.crt.pem
       - /opt/keycloak/certs/keycloak.key.pem:/opt/keycloak/conf/keycloak.key.pem
-    deploy:
-      resources:
-        limits:
-          memory: 512m
-          cpus: '0.5'
     restart: always
 
   oauth:
@@ -72,4 +67,5 @@ networks:
     driver: bridge
 
 volumes:
+
   postgres_data:
