@@ -7,7 +7,7 @@ variable "resource_group_name" {
 variable "location" {
   description = "Azure region for resources"
   type        = string
-  default     = "Sweden Central"
+  default     = "West Europe"
 }
 
 variable "vnet_name" {
@@ -69,4 +69,5 @@ variable "admin_username" {
   description = "Admin username for the VM"
   type        = string
   default     = "ubuntu"
+
 }
