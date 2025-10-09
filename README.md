@@ -5,3 +5,4 @@ Praktičan primer korišćenja DevOps alata
 <img width="2571" height="1550" alt="Screenshot 2025-10-08 211937" src="https://github.com/user-attachments/assets/25a3e74d-4390-4f99-ad24-c1ab6a6a2ec5" />
 
 ITS, Septembar 2025.
+
